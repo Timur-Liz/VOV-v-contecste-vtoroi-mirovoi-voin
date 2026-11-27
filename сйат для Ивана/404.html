@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Страница не найдена — ВОВ в истории Беларуси</title>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4efe4;color:#1f1c17;font-family:Georgia,"Times New Roman",serif;padding:24px}
+  .box{max-width:520px;text-align:center;background:#fffcf5;border:1px solid #d8cdb8;border-radius:20px;padding:40px 28px}
+  p{font-family:system-ui,sans-serif;color:#4f4a42;line-height:1.6}
+  a{display:inline-block;margin-top:12px;padding:12px 22px;border-radius:999px;background:#1f3d2b;color:#fffaf0;text-decoration:none;font-family:system-ui,sans-serif;font-weight:700}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Такой страницы нет</h1>
+  <p>Проверьте адрес или вернитесь к списку тем.</p>
+  <a id="home" href="./index.html">Ко всем темам</a>
+</div>
+<script>
+  // На GitHub Pages сайт проекта лежит в подпапке /<репозиторий>/ — ведём ссылку туда
+  (function () {
+    var seg = location.pathname.split("/")[1] || "";
+    var base = /\.github\.io$/.test(location.hostname) && seg && seg.indexOf(".") === -1 ? "/" + seg + "/" : "/";
+    document.getElementById("home").href = base;
+  })();
+</script>
+</body>
+</html>
